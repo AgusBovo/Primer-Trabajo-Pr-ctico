@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>Primer trabajo práctico</title>
+	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+	<meta content="utf-8" http-equiv="encoding"> 
+           <link rel="stylesheet" href="/style.css">
+           <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Open+Sans:wght@700&display=swap" rel="stylesheet">
+</head>
+<header>
+<h1> Calcul<span>AR</span></h1>
+<nav>
+    <ul>
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Sobre Nosotros</a></li>
+        <li><a href="#">Contacto</a></li>
+    </ul>
+</nav>
+</header>
+<body>
+    <div class="Background">
+        <div class="contenedor">
+        <form>
+            <label for="nombre">Nombre:</label>
+            <input type="text" name="Nombre" id="Nombre">
+            <br>
+            <label for="apellido">Apellido:</label>
+            <input type="text" name="Apellido" id="Apellido">
+            <br>
+            <label for="monto">Monto:</label>
+            <input type="text" name="Monto" id="Monto" value="0"> 
+            <br>
+            <label for="dia">Periodo:</label>
+            <input type="text" name="Dias" id="Dias" value="0"> 
+            <br>
+            <button type="button" onclick="ObtenerDatos()">Calcular</button>
+            <table>
+                <tr>
+                    <td>Periodo</td>
+                    <td>Monto Inicial</td>
+                    <td>Monto Final</td>
+                </tr>
+                <tr>
+                    <td id="periodo"></td><td id="montoinicial"></td><td id="montofinal"></td>
+                </tr>
+            </table>
+        </form>   
+        </div>
+        <br>
+        <div>
+        <form class="contenedor">
+            <label>¿Desea observar la inversión en multiples periodos? </label>
+            <br>
+            <button type="button" onclick="reinvertir()">Reinvertir</button>
+            <table>
+                <tr>
+                    <th>Periodo</th><th>Monto Inicial</th><th>Monto Final</th>
+                </tr>
+                <tr>
+                    <td>1</td><td id="monto1"></td><td id="montofinal1"></td>
+                </tr>
+                <tr>
+                    <td>2</td><td id="monto2"></td><td id="montofinal2"></td>
+                </tr>
+                <tr>
+                    <td>3</td><td id="monto3"></td><td id="montofinal3"></td>
+                </tr>
+                <tr>
+                    <td>4</td><td id="monto4"></td><td id="montofinal4"></td>
+                </tr>
+            </table>
+        </form>
+        </div>
+    </div>
+   <script src="/system.js"></script>
+</body>
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>Compania</h4>
+                    <ul>
+                        <li><a href="#">Sobre nosotros</a></li>
+                        <li><a href="#">Nuestros servicios</a></li>
+                        <li><a href="#">Politica de privacidad</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Siguenos</h4>
+                    <div class="social-links">
+                        <a href=""><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+   </footer>
+</html>
