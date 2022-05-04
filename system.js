@@ -6,18 +6,20 @@ var Monto = parseFloat(document.getElementById("Monto").value) ;
 var Dias = parseFloat(document.getElementById("Dias").value) ;
 var comprobante=false;
 var comprobantemonto=false;
+var comprobantenombre=false;
+var comprobanteapellido=false;
 var porcentaje =0;
 
 if (Nombre ==""){
     alert("Debe ingresar un nombre");
-    comprobante=false;
+    comprobantenombre=false;
     document.getElementById("Nombre").focus();
-}else {comprobante=true;}
+}else {comprobantenombre=true;}
 if (Apellido ==""){
     alert("Debe ingresar un apellido");
-    comprobante=false;
+    comprobanteapellido=false;
     document.getElementById("Apellido").focus();
-}else {comprobante=true;}
+}else {comprobanteapellido=true;}
 if (Monto<=1000){
     alert("El monto ingresado debe ser como minimo $1000 ");
     comprobantemonto = false;
@@ -44,7 +46,7 @@ if (Dias <=29)
         porcentaje=65;
     }
 
-    if (comprobante==true && comprobantemonto==true){
+    if (comprobante==true && comprobantemonto==true && comprobanteapellido==true && comprobantenombre==true){
         MontoFinal = Math.round(Monto + Monto*(Dias/360)*(porcentaje/100));
         montofinal.textContent=MontoFinal;
         montoinicial.textContent=Monto;
