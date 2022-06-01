@@ -8,16 +8,16 @@ var comprobante=false;
 var comprobantemonto=false;
 var porcentaje =0;
 
-if (Nombre ==""){
+if (Nombre.trim() =="" && Nombre==""){
     alert("Debe ingresar un nombre");
-    comprobante=false;
+    comprobanteNombre=false;
     document.getElementById("Nombre").focus();
-}else {comprobante=true;}
-if (Apellido ==""){
+}else {comprobanteNombre=true;}
+if (Apellido.trim() =="" && Apellido==""){
     alert("Debe ingresar un apellido");
-    comprobante=false;
+    comprobanteApellido=false;
     document.getElementById("Apellido").focus();
-}else {comprobante=true;}
+}else {comprobanteApellido=true;}
 if (Monto<=1000){
     alert("El monto ingresado debe ser como minimo $1000 ");
     comprobantemonto = false;
@@ -25,9 +25,9 @@ if (Monto<=1000){
 if (Dias <=29)
 {
     alert("Debe ingresar un periodo valido");
-    comprobante=false;
+    comprobanteDias=false;
     document.getElementById("Dias").focus();
-}else {comprobante=true;}
+}else {comprobanteDias=true;}
     if (Dias>=30 && Dias<=60){
         porcentaje = 40;
         
@@ -44,7 +44,7 @@ if (Dias <=29)
         porcentaje=65;
     }
 
-    if (comprobante==true && comprobantemonto==true){
+    if (comprobantemonto==true && comprobanteDias==true && comprobanteNombre==true && comprobanteApellido==true){
         MontoFinal = Math.round(Monto + Monto*(Dias/360)*(porcentaje/100));
         montofinal.textContent=MontoFinal;
         montoinicial.textContent=Monto;
@@ -57,20 +57,22 @@ var Nombre = document.getElementById("Nombre").value;
 var Apellido = document.getElementById("Apellido").value;
 var Monto = parseFloat(document.getElementById("Monto").value) ;
 var Dias = parseFloat(document.getElementById("Dias").value) ;
-var comprobante=false;
+var comprobanteNombre=false;
+var comprobanteApellido=false;
 var comprobantemonto=false;
+var comprobanteDias=false;
 var porcentaje =0;
 
-if (Nombre ==""){
+if (Nombre.trim() =="" && Nombre==""){
     alert("Debe ingresar un nombre");
-    comprobante=false;
+    comprobanteNombre=false;
     document.getElementById("Nombre").focus();
-}else {comprobante=true;}
-if (Apellido ==""){
+}else {comprobanteNombre=true;}
+if (Apellido.trim() =="" && Apellido==""){
     alert("Debe ingresar un apellido");
-    comprobante=false;
+    comprobanteApellido=false;
     document.getElementById("Apellido").focus();
-}else {comprobante=true;}
+}else {comprobanteApellido=true;}
 if (Monto<=1000){
     alert("El monto ingresado debe ser como minimo $1000 ");
     comprobantemonto = false;
@@ -78,9 +80,9 @@ if (Monto<=1000){
 if (Dias <=29)
 {
     alert("Debe ingresar un periodo valido");
-    comprobante=false;
+    comprobanteDias=false;
     document.getElementById("Dias").focus();
-}else {comprobante=true;}
+}else {comprobanteDias=true;}
     if (Dias>=30 && Dias<=60){
         porcentaje = 40;
         
@@ -97,7 +99,7 @@ if (Dias <=29)
         porcentaje=65;
     }
 
-    if (comprobante==true && comprobantemonto==true){
+    if (comprobantemonto==true && comprobanteDias==true && comprobanteNombre==true && comprobanteApellido==true){
         for(i=0;i<4;i++){
             if(i==0){
                 montofinal1.textContent=MontoFinal;
@@ -105,15 +107,15 @@ if (Dias <=29)
             }
             MontoFinal = Math.round(Monto + Monto*(Dias/360)*(porcentaje/100));
             
-            if(i==1){   
+            if(i===1){   
                 montofinal2.textContent=MontoFinal;
                 monto2.textContent=Monto;
             }
-            if(i==2){   
+            if(i===2){   
                 montofinal3.textContent=MontoFinal;
                 monto3.textContent=Monto;
             }
-            if(i==3){   
+            if(i===3){   
                 montofinal4.textContent=MontoFinal;
                 monto4.textContent=Monto;
             }
