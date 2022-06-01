@@ -8,12 +8,12 @@ var comprobante=false;
 var comprobantemonto=false;
 var porcentaje =0;
 
-if (Nombre.trim() =="" && Nombre==""){
+if (Nombre.trim() ==="" && Nombre===""){
     alert("Debe ingresar un nombre");
     comprobanteNombre=false;
     document.getElementById("Nombre").focus();
 }else {comprobanteNombre=true;}
-if (Apellido.trim() =="" && Apellido==""){
+if (Apellido.trim() ==="" && Apellido===""){
     alert("Debe ingresar un apellido");
     comprobanteApellido=false;
     document.getElementById("Apellido").focus();
@@ -44,7 +44,7 @@ if (Dias <=29)
         porcentaje=65;
     }
 
-    if (comprobantemonto==true && comprobanteDias==true && comprobanteNombre==true && comprobanteApellido==true){
+    if (comprobantemonto===true && comprobanteDias===true && comprobanteNombre===true && comprobanteApellido===true){
         MontoFinal = Math.round(Monto + Monto*(Dias/360)*(porcentaje/100));
         montofinal.textContent=MontoFinal;
         montoinicial.textContent=Monto;
@@ -63,12 +63,12 @@ var comprobantemonto=false;
 var comprobanteDias=false;
 var porcentaje =0;
 
-if (Nombre.trim() =="" && Nombre==""){
+if (Nombre.trim() ==="" && Nombre===""){
     alert("Debe ingresar un nombre");
     comprobanteNombre=false;
     document.getElementById("Nombre").focus();
 }else {comprobanteNombre=true;}
-if (Apellido.trim() =="" && Apellido==""){
+if (Apellido.trim() ==="" && Apellido===""){
     alert("Debe ingresar un apellido");
     comprobanteApellido=false;
     document.getElementById("Apellido").focus();
@@ -99,9 +99,9 @@ if (Dias <=29)
         porcentaje=65;
     }
 
-    if (comprobantemonto==true && comprobanteDias==true && comprobanteNombre==true && comprobanteApellido==true){
+    if (comprobantemonto===true && comprobanteDias===true && comprobanteNombre===true && comprobanteApellido===true){
         for(i=0;i<4;i++){
-            if(i==0){
+            if(i===0){
                 montofinal1.textContent=MontoFinal;
                 monto1.textContent=Monto;
             }
