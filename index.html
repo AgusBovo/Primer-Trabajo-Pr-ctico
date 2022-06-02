@@ -6,6 +6,7 @@
 	<meta content="utf-8" http-equiv="encoding"> 
            <link rel="stylesheet" href="Style.css">
            <link rel="preconnect" href="https://fonts.googleapis.com">
+           <script src="https://unpkg.com/vue@3"></script>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Open+Sans:wght@700&display=swap" rel="stylesheet">
 </head>
@@ -20,8 +21,9 @@
 </nav>
 </header>
 <body>
-    <div class="Background">
-        <div class="contenedor">
+    <div id="app">
+        <div class="Background">
+            <div class="contenedor">
         <form>
             <label for="nombre">Nombre:</label>
             <input type="text" name="Nombre" id="Nombre">
@@ -35,7 +37,7 @@
             <label for="dias">Periodo:</label>
             <input type="text" name="Dias" id="Dias" value="0"> 
             <br>
-            <button type="button" onclick="ObtenerDatos()">Calcular</button>
+            <button type="button" v-on:click="calcular">Calcular</button>
             <table>
                 <tr>
                     <td>Periodo</td>
@@ -47,10 +49,10 @@
                 </tr>
             </table>
         </form>   
-        </div>
-        <br>
-        <div>
-        <form class="contenedor">
+            </div>
+            <br>
+            <div>
+            <form class="contenedor">
             <label>¿Desea observar la inversión en multiples periodos? </label>
             <br>
             <button type="button" onclick="reinvertir()">Reinvertir</button>
@@ -71,16 +73,30 @@
                     <td>4</td><td id="monto4"></td><td id="montofinal4"></td>
                 </tr>
             </table>
-        </form>
-        </div>
+            </form>
+            <br>
+            </div>
+            <div class="contenedor">
+                <review-form @review-ssubmitted="addReview"></review-form>
+            </div>
+            <div class="contenedor">
+                <review-list :reviews="reviews"></review-list>
+            </div>
+        </div>  
     </div>
     
-    <!--Importar App-->
-   <script src="system.js"></script>
-    <!--Importar Componentes-->
-
-    <!--Montar App-->
     
+    <!--Importar App y Js-->
+   <script src="system.js"></script>
+   <script src="./App/Aplicacion.js"></script>
+
+    <!--Importar Componentes-->
+    <script src="./App/Reviews.js"></script>
+    <script src="./App/ReviewsPublicadas.js"></script>
+    <!--Montar App-->
+    <script>
+        const AppMontada = app.mount('#app')
+    </script>
 </body>
     <footer class="footer">
         <div class="container">
