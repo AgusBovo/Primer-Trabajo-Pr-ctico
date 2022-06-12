@@ -23,76 +23,18 @@
 <body>
     <div id="app">
         <div class="Background">
-            <div class="contenedor">
-        <form>
-            <label for="nombre">Nombre:</label>
-            <input type="text" name="Nombre" id="Nombre">
+            
+            <calculo-individual></calculo-individual>
             <br>
-            <label for="apellido">Apellido:</label>
-            <input type="text" name="Apellido" id="Apellido">
-            <br>
-            <label for="monto">Monto:</label>
-            <input type="text" name="Monto" id="Monto" value="0"> 
-            <br>
-            <label for="dias">Periodo:</label>
-            <input type="text" name="Dias" id="Dias" value="0"> 
-            <br>
-            <button type="button" v-on:click="calcular">Calcular</button>
-            <table>
-                <tr>
-                    <td>Periodo</td>
-                    <td>Monto Inicial</td>
-                    <td>Monto Final</td>
-                </tr>
-                <tr>
-                    <td id="periodo"></td><td id="montoinicial"></td><td id="montofinal"></td>
-                </tr>
-            </table>
-        </form>   
-            </div>
-            <br>
-            <div>
-            <form class="contenedor">
-            <label>¿Desea observar la inversión en multiples periodos? </label>
-            <br>
-            <button type="button" onclick="reinvertir()">Reinvertir</button>
-            <table>
-                <tr>
-                    <th>Periodo</th><th>Monto Inicial</th><th>Monto Final</th>
-                </tr>
-                <tr>
-                    <td>1</td><td id="monto1"></td><td id="montofinal1"></td>
-                </tr>
-                <tr>
-                    <td>2</td><td id="monto2"></td><td id="montofinal2"></td>
-                </tr>
-                <tr>
-                    <td>3</td><td id="monto3"></td><td id="montofinal3"></td>
-                </tr>
-                <tr>
-                    <td>4</td><td id="monto4"></td><td id="montofinal4"></td>
-                </tr>
-            </table>
-            </form>
-            <br>
-            </div>
-            <div class="contenedor">
-                <review-form @review-ssubmitted="addReview"></review-form>
-            </div>
-            <div class="contenedor">
-                <review-list :reviews="reviews"></review-list>
-            </div>
         </div>  
     </div>
     
     
     <!--Importar App y Js-->
-   <script src="system.js"></script>
    <script src="./App/Aplicacion.js"></script>
 
     <!--Importar Componentes-->
-    <script src="./App/Reviews.js"></script>
-    <script src="./App/ReviewsPublicadas.js"></script>
+    <script src="./App/CalculoIndividual.js"></script>
     <!--Montar App-->
     <script>
         const AppMontada = app.mount('#app')
