@@ -31,8 +31,8 @@ app.component('calculo-individual',{
             <br>
             <button type="button" v-on:click="reinvertir">Reinvertir</button>
             <ul>
-                <li v-for="reinversion of reinvertir">
-                {{ reinversion.monto }} - {{ reinversion.montofinal }} - {{ reinversion.dias }}
+                <li v-for="reinversiones of reinversion">
+                {{ reinversiones.monto }} - {{ reinversiones.montofinal }} - {{ reinversiones.dias }}
                 </li>
             </ul>
             </form>
@@ -138,30 +138,31 @@ app.component('calculo-individual',{
                                 periodo: this.dias,
                                 monto: this.monto
                              })
-                        MontoFinal = Math.round(this.monto + this.monto*(Dias/360)*(porcentaje/100));
+                        MontoFinal = Math.round(Monto + Monto*(this.dias/360)*(porcentaje/100));
                         
                         if(i===1){   
                             this.reinversion.push({
+
                                 montofinal: MontoFinal,
                                 periodo: this.dias,
-                                monto: this.monto
+                                monto: Monto
                              })
                         }
                         if(i===2){   
                             this.reinversion.push({
                                 montofinal: MontoFinal,
                                 periodo: this.dias,
-                                monto: this.Monto
+                                monto: Monto
                              })
                         }
                         if(i===3){   
                             this.reinversion.push({
                                 montofinal: MontoFinal,
                                 periodo: this.dias,
-                                monto: this.monto
+                                monto: Monto
                              })
                         }
-                        this.monto=MontoFinal;
+                        Monto=MontoFinal;
                     }
                 }
             }
