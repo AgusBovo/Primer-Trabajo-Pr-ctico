@@ -18,7 +18,7 @@ app.component('calculo-individual',{
             <input class="button" type="submit" value="Calcular" v-on:click="Datos">
         </form> 
           
-        <ul>
+        <ul class="listas">
             <li v-for="invert of inversion">
             {{invert.montofinal}} - {{invert.monto}} - {{invert.dias}}
             </li>
@@ -30,12 +30,14 @@ app.component('calculo-individual',{
             <label>¿Desea observar la inversión en multiples periodos? </label>
             <br>
             <button type="button" v-on:click="reinvertir">Reinvertir</button>
-            <ul>
-                <li v-for="reinversiones of reinversion">
-                {{ reinversiones.monto }} - {{ reinversiones.montofinal }} - {{ reinversiones.dias }}
-                </li>
-            </ul>
-            </form>
+            
+                <ul class="listas">
+                    <li v-for="reinversiones of reinversion">
+                    {{ reinversiones.monto }} - {{ reinversiones.montofinal }} - {{ reinversiones.dias }}
+                    </li>
+                </ul>
+            
+        </form>
         `,
             data(){
                 return{

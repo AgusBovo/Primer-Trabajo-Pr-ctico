@@ -16,6 +16,11 @@ table, th, td{
     height: 200;
     border-radius: 25px;
 }
+.listas{
+	text-align: center;
+	padding-right: 35%;
+	margin-top: -5%;
+}
 button{
     text-align: center;
     margin-left: 35%;
