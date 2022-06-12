@@ -30,23 +30,11 @@ app.component('calculo-individual',{
             <label>¿Desea observar la inversión en multiples periodos? </label>
             <br>
             <button type="button" v-on:click="reinvertir">Reinvertir</button>
-            <table>
-                <tr>
-                    <th>Periodo</th><th>Monto Inicial</th><th>Monto Final</th>
-                </tr>
-                <tr>
-                    <td>1</td><td id="monto1"></td><td id="montofinal1"></td>
-                </tr>
-                <tr>
-                    <td>2</td><td id="monto2"></td><td id="montofinal2"></td>
-                </tr>
-                <tr>
-                    <td>3</td><td id="monto3"></td><td id="montofinal3"></td>
-                </tr>
-                <tr>
-                    <td>4</td><td id="monto4"></td><td id="montofinal4"></td>
-                </tr>
-            </table>
+            <ul>
+                <li v-for="reinversion of reinvertir">
+                {{ reinversion.monto }} - {{ reinversion.montofinal }} - {{ reinversion.dias }}
+                </li>
+            </ul>
             </form>
         `,
             data(){
@@ -105,13 +93,6 @@ app.component('calculo-individual',{
                     monto: this.monto
                    
                     })
-                    let inversiones ={
-                    montofinal: MontoFinal,
-                    periodo: this.dias,
-                    monto: this.monto
-                    } 
-                    this.$emit('inversiones-enviadas',inversiones)
-                    
                  }
             },
 
@@ -153,25 +134,34 @@ app.component('calculo-individual',{
                     for(i=0;i<4;i++){
                         if(i===0){
                             this.reinversion.push({
-                                montofinal1: MontoFinal,
+                                montofinal: MontoFinal,
                                 periodo: this.dias,
                                 monto: this.monto
                              })
-                        MontoFinal = Math.round(Monto + Monto*(Dias/360)*(porcentaje/100));
+                        MontoFinal = Math.round(this.monto + this.monto*(Dias/360)*(porcentaje/100));
                         
                         if(i===1){   
-                            montofinal2.textContent=MontoFinal;
-                            monto2.textContent=Monto;
+                            this.reinversion.push({
+                                montofinal: MontoFinal,
+                                periodo: this.dias,
+                                monto: this.monto
+                             })
                         }
                         if(i===2){   
-                            montofinal3.textContent=MontoFinal;
-                            monto3.textContent=Monto;
+                            this.reinversion.push({
+                                montofinal: MontoFinal,
+                                periodo: this.dias,
+                                monto: this.Monto
+                             })
                         }
                         if(i===3){   
-                            montofinal4.textContent=MontoFinal;
-                            monto4.textContent=Monto;
+                            this.reinversion.push({
+                                montofinal: MontoFinal,
+                                periodo: this.dias,
+                                monto: this.monto
+                             })
                         }
-                        Monto=MontoFinal;
+                        this.monto=MontoFinal;
                     }
                 }
             }
